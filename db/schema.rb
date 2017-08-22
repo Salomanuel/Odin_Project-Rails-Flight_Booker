@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822115015) do
+ActiveRecord::Schema.define(version: 20170822120529) do
 
   create_table "airports", force: :cascade do |t|
     t.string "name"
     t.string "icao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "flights", force: :cascade do |t|
+    t.integer "start_airport_id"
+    t.integer "end_airport_id"
+    t.datetime "date"
+    t.integer "lenght"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
