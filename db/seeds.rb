@@ -2,7 +2,7 @@ Airport::delete_all
 Flight::delete_all
 
 
-10.times do
+5.times do
 	Airport.create!(name:	Faker::Address.city )
 end
 
