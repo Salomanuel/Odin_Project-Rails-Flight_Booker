@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-	root 'application#hello'
+	root 'flights#index'
+
+	resources :flights, only:[:index]
 end
