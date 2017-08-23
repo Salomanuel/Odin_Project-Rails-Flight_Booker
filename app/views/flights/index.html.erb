@@ -1,15 +1,45 @@
+<%= link_to "Search a new Flight", flights_path %>
 <h1>Flights index</h1>
 
 <%= form_tag('/flights', method: 'get') do %>
-	<%=  label_tag(:start_airport_id, "Departure:") %>
-	<%= select_tag(:start_airport_id, options_for_select(@airports)) %>
-
-	<%=  label_tag(:end_aiport_id,		"Arrival:") %>
-	<%= select_tag(:end_airport_id,		options_for_select(@airports)) %>
-
+		
+	<%= fields_for :flight_query do |f| %>
+		Departure:
+		<%= f.select(:start_airport_id, options_for_select(@airports)) %>
+		Arrival:
+		<%= f.select(:end_airport_id,		options_for_select(@airports)) %>
+	<% end %>
 	<%= submit_tag("search") %>
 <% end %>
 
+
+<br><br>
+<% if @flights %>
+	<% @flights.each do |f| %>
+		<table>
+			<thead>
+				<tr>
+					<th>number</th>
+					<th>departure</th>
+					<th>arrival</th>
+					<th>date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= f.id %></td>
+					<td><%= f.start_airport.name %></td>
+					<td><%= f.end_airport.name %></td>
+					<td><%= f.date %></td>
+				</tr>
+			</tbody>
+		<% end %>
+	</ul>
+	<p><%= "No flights between those two cities" if @flights.empty? %>
+<% end %>
+
+
+<br><br><br><br><br><br>
 <h3>stuff to implement</h3>
 <ul>
 	<li>nice css</li>
