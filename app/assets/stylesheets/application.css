@@ -1,3 +1,12 @@
+table { 
+	border-collapse: collapse; 
+	width: 50%;
+}
+
+table, th, td {
+	border: 1px solid blue;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
