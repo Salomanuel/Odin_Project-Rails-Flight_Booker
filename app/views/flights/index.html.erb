@@ -1,2 +1,23 @@
 <h1>Flights index</h1>
 
+<%= form_tag('/flights', method: 'get') do %>
+	<%=  label_tag(:start_airport_id, "Departure:") %>
+	<%= select_tag(:start_airport_id, options_for_select(@airports)) %>
+
+	<%=  label_tag(:end_aiport_id,		"Arrival:") %>
+	<%= select_tag(:end_airport_id,		options_for_select(@airports)) %>
+
+	<%= submit_tag("search") %>
+<% end %>
+
+<h3>stuff to implement</h3>
+<ul>
+	<li>nice css</li>
+	<li>star_wars theme</li>
+	<li>switch between two themes</li>
+	<li>planes occupancy</li>
+	<li>validation</li>
+	<li>post errors</li>
+	<li>js notifications</li>
+	<li>check if all the other forms use form_tag</li>
+</ul>
