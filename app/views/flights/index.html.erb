@@ -15,7 +15,9 @@
 
 <br><br>
 <% if @flights %>
-	<% @flights.each do |f| %>
+	<% if @flights.empty? %>
+		<p><%= "No flights between those two cities" if @flights.empty? %>
+	<% else %>
 		<table>
 			<thead>
 				<tr>
@@ -26,20 +28,21 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><%= f.id %></td>
-					<td><%= f.start_airport.name %></td>
-					<td><%= f.end_airport.name %></td>
-					<td><%= f.date %></td>
-				</tr>
+				<% @flights.each do |f| %>
+					<tr>
+						<td><%= f.id %></td>
+						<td><%= f.start_airport.name %></td>
+						<td><%= f.end_airport.name %></td>
+						<td><%= f.date.strftime("%h %d, %H:%M") %></td>
+					</tr>
+				<% end %>
 			</tbody>
-		<% end %>
-	</ul>
-	<p><%= "No flights between those two cities" if @flights.empty? %>
+		</table>
+	<% end %>
 <% end %>
 
 
-<br><br><br><br><br><br>
+<br><br>
 <h3>stuff to implement</h3>
 <ul>
 	<li>nice css</li>
