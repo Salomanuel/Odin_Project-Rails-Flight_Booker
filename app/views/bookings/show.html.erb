@@ -1,5 +1,6 @@
-flights details:
+<h1>flight booked</h1>
 
+<h2>reservation for <%= @passenger.name %></h2>
 <table>
 	<thead>
 		<tr>
@@ -18,13 +19,3 @@ flights details:
 			</tr>
 	</tbody>
 </table>
-
-<%= form_for @passenger do |p| %>
-	<%= p.label  :name %>
-	<%= p.text_field :name %>
-	<%= p.label  			:email %>
-	<%= p.email_field :email %>
-
-	<%= hidden_field_tag :flight_id, @flight.id %>
-	<%= p.submit "Book the flight" %>
-<% end %>
