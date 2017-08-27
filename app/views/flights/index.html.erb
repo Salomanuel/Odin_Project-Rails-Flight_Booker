@@ -1,7 +1,7 @@
 <%= link_to "Search a new Flight", flights_path %>
 <h1>Flights index</h1>
 
-<%= form_tag('/flights', method: 'get') do %>
+<%= form_tag('/flights', method: :get) do %>
 		
 	<%= fields_for :flight_query do |f| %>
 		Departure:
@@ -18,26 +18,40 @@
 	<% if @flights.empty? %>
 		<p><%= "No flights between those two cities" if @flights.empty? %>
 	<% else %>
-		<table>
-			<thead>
-				<tr>
-					<th>number</th>
-					<th>departure</th>
-					<th>arrival</th>
-					<th>date</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @flights.each do |f| %>
-					<tr>
-						<td><%= f.id %></td>
-						<td><%= f.start_airport.name %></td>
-						<td><%= f.end_airport.name %></td>
-						<td><%= f.date.strftime("%h %d, %H:%M") %></td>
-					</tr>
+		<% if @booking.errors.any? %>
+			<ul>
+				<% @booking.errors.full_messages.each do |error| %>
+					<li><%= error %></li>
 				<% end %>
-			</tbody>
-		</table>
+			</ul>
+		<% end %>
+		<%= form_tag '/bookings/new', method: :get do %>
+			<%= fields_for :booking do |b| %>
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>number</th>
+							<th>departure</th>
+							<th>arrival</th>
+							<th>date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @flights.each do |f| %>
+							<tr>
+								<td><%= b.radio_button :flight_id, "select flight #{f.id}" %> </td>
+								<td><%= f.id %></td>
+								<td><%= f.start_airport.name %></td>
+								<td><%= f.end_airport.name %></td>
+								<td><%= f.date.strftime("%h %d, %H:%M") %></td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+				<%= b.submit "proceed to booking" %>
+			<% end %>
+		<% end %>
 	<% end %>
 <% end %>
 
@@ -53,4 +67,5 @@
 	<li>post errors</li>
 	<li>js notifications</li>
 	<li>check if all the other forms use form_tag</li>
+	<li>cities ordered by name in the drop down</li>
 </ul>
