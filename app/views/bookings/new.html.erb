@@ -1,3 +1,21 @@
-continue booking for
+flights details:
 <br>
-Flight #<%= params[:booking][:flight_id] %>
+
+<table>
+	<thead>
+		<tr>
+			<th>number</th>
+			<th>departure</th>
+			<th>arrival</th>
+			<th>date</th>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+				<td><%= @flight.id %></td>
+				<td><%= @flight.start_airport.name %></td>
+				<td><%= @flight.end_airport.name %></td>
+				<td><%= @flight.date.strftime("%h %d, %H:%M") %></td>
+			</tr>
+	</tbody>
+</table>
