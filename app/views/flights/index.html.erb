@@ -40,7 +40,7 @@
 					<tbody>
 						<% @flights.each do |f| %>
 							<tr>
-								<td><%= b.radio_button :flight_id, "select flight #{f.id}" %> </td>
+								<td><%= b.radio_button :flight_id, f.id %> </td>
 								<td><%= f.id %></td>
 								<td><%= f.start_airport.name %></td>
 								<td><%= f.end_airport.name %></td>
