@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <p><%= link_to "Search a new Flight", flights_path %></p>
     <%= yield %>
     <%= debug(params) if Rails.env.development? %>
   </body>
