@@ -2,9 +2,10 @@ Airport::delete_all
 Flight::delete_all
 
 
-5.times do
-	Airport.create!(name:	Faker::Address.city )
-end
+
+cities = ["Roma", "Madrid", "London", "Paris", "Berlin"]
+cities.each{ |c| Airport.create!(name: c) }
+
 
 15.times do
 	start_airport = Airport.all.sample.id
