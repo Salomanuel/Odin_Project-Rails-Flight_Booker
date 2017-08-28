@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 		@flight  					= Flight.find(params[:flight_id])
 		@booking 					= @flight.bookings.build(booking_params)
 		permitted_params 	= booking_params.to_h
-		@passenger  			= permitted_params[:passenger_attributes]
+		@passenger  			= permitted_params[:passengers_attributes]
 		if @booking.save! # the bang is for debug in development
 			redirect_to @booking
 		else
@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
 
 	def show
 		@booking 		= Booking.find(params[:id])
-		# @passenger 	= @booking.passenger
+		@passenger 	= @booking.passengers
 		@flight 		= @booking.flight
 	end
 
