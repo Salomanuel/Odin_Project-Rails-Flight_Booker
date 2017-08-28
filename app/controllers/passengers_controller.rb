@@ -6,7 +6,7 @@ class PassengersController < ApplicationController
 		if @passenger.save
 			@booking = @passenger.create_booking(flight_id: passenger_params[:flight_id])
 			# render html: "saved"
-			redirect_to Booking.last # SO WRONG
+			redirect_to @booking # SO WRONG
 		else
 			render html: "PROBLEM"
 		end

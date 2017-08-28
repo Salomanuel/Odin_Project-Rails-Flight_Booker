@@ -19,12 +19,16 @@ flights details:
 	</tbody>
 </table>
 
-<%= form_for @passenger do |p| %>
-	<%= p.label  :name %>
-	<%= p.text_field :name %>
-	<%= p.label  			:email %>
-	<%= p.email_field :email %>
-
+<%= form_for @booking do |b| %>
 	<%= hidden_field_tag :flight_id, @flight.id %>
-	<%= p.submit "Book the flight" %>
+
+	<%= b.fields_for :passengers, @booking.passengers.build do |p| %>
+		<%= p.label :name %>
+		<%= p.text_field :name %>
+		<%= p.label :email %>
+		<%= p.email_field :email %>
+	<% end %>
+
+	
+	<%= b.submit "Book the flight" %>
 <% end %>
