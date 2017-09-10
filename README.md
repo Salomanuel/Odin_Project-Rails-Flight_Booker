@@ -1,4 +1,4 @@
- Ruby on Rails >> Advanced Forms and Active Record >> [Project: Building Advanced Forms](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms)
+Ruby on Rails >> Advanced Forms and Active Record >> [Project: Building Advanced Forms](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms)
 
 
 # Building Advanced Forms
@@ -71,3 +71,23 @@ Once the user has submitted their chosen flight, it's time to take their booking
 
 
 Make sure your ticketing flow is working properly. Good work!
+
+Ruby on Rails >> APIs, Mailers and Advanced Topics >> [Project: Sending Confirmation Emails](https://www.theodinproject.com/courses/ruby-on-rails/lessons/sending-confirmation-emails)
+
+# Project: Sending Welcome Emails
+
+Setting up a mailer is a relatively straightforward task. It's very similar to building a new controller and views. Once you've made a couple, it should come naturally.
+Your Task
+
+You'll be dusting off your Flight Booker project (or one of the other projects that has users registering) and having it send out a "You have booked your ticket" email to all Passengers when they are created as part of the booking process.
+
+1) Locate and load up the project file.
+2) Do some pushups and jumping jacks. You've been spending a bit too much time at the computer lately.
+3)  Generate your new mailer with `$ rails generate mailer PassengerMailer`
+4)  Install the `letter_opener` gem (see docs here) to open your emails in the browser instead of sending them in the development environment.
+5) Follow through the steps listed in the Rails Guide to create the action to send the "thank you" email.
+6) Build both a `.html.erb` and `.text.erb` version of your thank you ticket email.
+7) Test that the email sends by creating a new flight booking (`letter_opener` should open it in the browser for you if you've set it up properly)
+8) Try out one other trick -- call the mailer directly from the Rails Console using something like `> PassengerMailer.thank_you_email(Passenger.first).deliver_now!`.
+9) Extra Credit: Deploy it to Heroku and try it out. If you deploy to Heroku, there will be a bit of additional setup to get the SendGrid add-on (see docs) and make sure your configuration is set up properly. The docs describe how to get that up and going.
+
