@@ -1,6 +1,13 @@
 <h1>Flights</h1>
 
 <h2>search flight</h2>
+<%= form_tag("/flights", method: "get") do %>
+	<%= label_tag( :departure_airport) %>
+	<%= select_tag(:departure_airport, 	options_for_select(@airports_select)) %>
+	<%= label_tag( :arrival_airport) %>
+	<%= select_tag(:arrival_airport, 		options_for_select(@airports_select)) %>
+	<%= submit_tag "search flight" %>
+<% end %>
 
 <h2>Airports</h2>
 <ul>
