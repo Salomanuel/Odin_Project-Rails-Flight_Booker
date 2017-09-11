@@ -1,0 +1,48 @@
+<h1>Airport <%= @airport.name %></h1>
+
+<h2>Departures</h2>
+<table>
+	<thead>
+		<tr>
+			<td>Number</td>
+			<td>Departure</td>
+			<td>Arrival</td>
+			<td>Date</td>
+			<td>Time</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @airport.departures.all.each do |flight| %>
+			<tr>
+				<td><%= flight.id %></td>
+				<td><%= flight.departure_airport.name %> </td>
+				<td><%= flight.arrival_airport.name %> </td>
+				<td><%= flight.date.strftime("%a, %b %d") %> </td>
+				<td><%= flight.date.strftime("%H, %M") %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<h2>Arrivals</h2>
+<table>
+	<thead>
+		<tr>
+			<td>Number</td>
+			<td>Departure</td>
+			<td>Arrival</td>
+			<td>Date</td>
+			<td>Time</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @airport.arrivals.all.each do |flight| %>
+			<tr>
+				<td><%= flight.id %></td>
+				<td><%= flight.departure_airport.name %> </td>
+				<td><%= flight.arrival_airport.name %> </td>
+				<td><%= flight.date.strftime("%a, %b %d") %> </td>
+				<td><%= flight.date.strftime("%H, %M") %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
