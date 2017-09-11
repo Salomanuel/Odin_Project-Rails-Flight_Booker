@@ -2,43 +2,18 @@
 
 <h2>search flight</h2>
 <%= form_tag("/flights", method: "get") do %>
-	<%= label_tag( :departure_airport) %>
-	<%= select_tag(:departure_airport, 	options_for_select(@airports_select)) %>
-	<%= label_tag( :arrival_airport) %>
-	<%= select_tag(:arrival_airport, 		options_for_select(@airports_select)) %>
-	<%= submit_tag "search flight" %>
+		<%= label_tag( :departure_airport) %>
+		<%= select_tag(:departure_airport, 	options_for_select(@airports_select)) %>
+		<%= label_tag( :arrival_airport) %>
+		<%= select_tag(:arrival_airport, 		options_for_select(@airports_select)) %>
+		<%= submit_tag "search flight" %>
 <% end %>
 
-<h2>Airports</h2>
 <ul>
-	<% @airports.each do |airport| %>
-		<li> <%= link_to airport.name, airport %> </li>
+	<% @flights.each do |flight| %>
+		<li><%= flight %></li>
 	<% end %>
 </ul>
-
-<h2>all flights</h2>
-<table>
-	<thead>
-		<tr>
-			<td>Number</td>
-			<td>Departure</td>
-			<td>Arrival</td>
-			<td>Date</td>
-			<td>Time</td>
-		</tr>
-	</thead>
-	<tbody>
-		<% @flights.each do |flight| %>
-			<tr>
-				<td><%= flight.id %></td>
-				<td><%= flight.departure_airport.name %> </td>
-				<td><%= flight.arrival_airport.name %> </td>
-				<td><%= flight.date.strftime("%a, %b %d") %> </td>
-				<td><%= flight.date.strftime("%H, %M") %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
 
 <h2>to do</h2>
 <ul>
