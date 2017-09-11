@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry-rails'
 gem 'faker'
 
+gem 'letter_opener'
+
 group :test do
 	gem 'guard'
 	gem 'guard-minitest'
