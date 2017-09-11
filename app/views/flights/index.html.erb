@@ -9,11 +9,28 @@
 		<%= submit_tag "search flight" %>
 <% end %>
 
-<ul>
-	<% @flights.each do |flight| %>
-		<li><%= flight %></li>
-	<% end %>
-</ul>
+<%= form_for @booking do |f| %>
+	<table>
+		<thead>
+			<tr>
+				<td>select</td>
+				<td>number</td>
+				<td>date</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @flights.each do |flight| %>
+				<tr>
+					<td><%= f.radio_button :id, 'id' %></td>
+					<td><%= flight.id %></td>
+					<td><%= flight.date %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= f.submit "book now" %>
+<% end %>
+
 
 <h2>to do</h2>
 <ul>

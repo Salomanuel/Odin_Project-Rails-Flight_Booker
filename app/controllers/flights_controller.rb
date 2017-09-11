@@ -7,6 +7,7 @@ class FlightsController < ApplicationController
 			@flights = Flight.where("departure_airport = ? AND arrival_airport = ?",
 				params[:departure_airport], params[:arrival_airport])
 		end
+		@booking = "ok"
 	end
 
 end
