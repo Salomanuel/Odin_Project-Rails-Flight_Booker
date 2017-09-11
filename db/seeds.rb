@@ -18,8 +18,8 @@ end
 
 50.times do |i|
 	flight = Flight.new
-	flight.departure_airport = random_airport.id
-	flight.arrival_airport   = random_airport(Airport.find(flight.departure_airport)).id
+	flight.departure_airport = random_airport
+	flight.arrival_airport   = random_airport(flight.departure_airport)
 	flight.date = Time.now + rand(1000000).seconds
 	flight.save
 end
