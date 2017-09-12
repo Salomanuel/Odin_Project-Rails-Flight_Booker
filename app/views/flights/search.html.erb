@@ -5,31 +5,33 @@
 		<%= select_tag(:departure_airport, 	options_for_select(@airports_select)) %>
 		<%= label_tag( :arrival_airport) %>
 		<%= select_tag(:arrival_airport, 		options_for_select(@airports_select)) %>
+		<%= hidden_field_tag(:submitted, true) %>
 		<%= submit_tag "search flight" %>
 <% end %>
 
-<%= form_for @booking do |f| %>
-	<table>
-		<thead>
-			<tr>
-				<th>select</td>
-				<th>number</td>
-				<th>date</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @flights.each do |flight| %>
+<% if params[:submitted] %>
+	<%= form_for @booking do |f| %>
+		<table>
+			<thead>
 				<tr>
-					<td><%= f.radio_button :id, 'id' %></td>
-					<td><%= flight.id %></td>
-					<td><%= flight.date %></td>
+					<th>select</td>
+					<th>number</td>
+					<th>date</td>
 				</tr>
-			<% end %>
-		</tbody>
-	</table>
-	<%= f.submit "book now" %>
+			</thead>
+			<tbody>
+				<% @flights.each do |flight| %>
+					<tr>
+						<td><%= f.radio_button :id, 'id' %></td>
+						<td><%= flight.id %></td>
+						<td><%= flight.date %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<%= f.submit "book now" %>
+	<% end %>
 <% end %>
-
 
 <h2>to do</h2>
 <ul>
