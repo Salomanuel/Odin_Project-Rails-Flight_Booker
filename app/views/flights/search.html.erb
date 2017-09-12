@@ -5,6 +5,8 @@
 		<%= select_tag(:departure_airport, 	options_for_select(@airports_select)) %>
 		<%= label_tag( :arrival_airport) %>
 		<%= select_tag(:arrival_airport, 		options_for_select(@airports_select)) %>
+		<%= label_tag( :date) %>
+		<%= select_tag(:date, options_for_select(@flight_days)) %>
 		<%= hidden_field_tag(:submitted, true) %>
 		<%= submit_tag "search flight" %>
 <% end %>
