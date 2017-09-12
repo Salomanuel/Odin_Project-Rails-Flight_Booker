@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-	root 'flights#index'
+	root 'flights#search'
 
-	resources :flights, 	only: [ :index ]
+	get 'flights/search'
+
+	resources :flights, 	only: [ :index, :search ]
 	resources :airports, 	only: [ :show ]
 end

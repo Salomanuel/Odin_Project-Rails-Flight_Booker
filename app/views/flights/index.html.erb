@@ -1,38 +1,22 @@
-<h1>Flights</h1>
+<h1>All Flights</h1>
 
-<h2>search flight</h2>
-<%= form_tag("/flights", method: "get") do %>
-		<%= label_tag( :departure_airport) %>
-		<%= select_tag(:departure_airport, 	options_for_select(@airports_select)) %>
-		<%= label_tag( :arrival_airport) %>
-		<%= select_tag(:arrival_airport, 		options_for_select(@airports_select)) %>
-		<%= submit_tag "search flight" %>
-<% end %>
-
-<%= form_for @booking do |f| %>
-	<table>
-		<thead>
+<table>
+	<thead>
+		<tr>
+			<th>number</th>
+			<th>departure</th>
+			<th>arrival</th>
+			<th>date</th>
+			<th>time</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @flights.order(:date).each do |flight| %>
 			<tr>
-				<td>select</td>
-				<td>number</td>
-				<td>date</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @flights.each do |flight| %>
-				<tr>
-					<td><%= f.radio_button :id, 'id' %></td>
-					<td><%= flight.id %></td>
-					<td><%= flight.date %></td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
-	<%= f.submit "book now" %>
-<% end %>
-
-
-<h2>to do</h2>
-<ul>
-	<li>organize Airports page and all flights page</li>
-</ul>
+				<td><%= flight.id %></td>
+				<td><%= flight.departure_airport.name %></td>
+				<td><%= flight.arrival_airport.name %></td>
+				<td><%= flight.date.strftime("%a, %b %d") %></td>
+				<td><%= flight.date.strftime("%H:%M") %></td>
+		<% end %>
+</table>
