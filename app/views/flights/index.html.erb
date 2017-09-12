@@ -1,5 +1,13 @@
 <h1>All Flights</h1>
 
+<h2>Airports</h2>
+<ul>
+	<% @airports.each do |airport| %>
+		<li><%= link_to airport.name, airport %></li>
+	<% end %>
+</ul>
+
+<h2>Flights</h2>
 <table>
 	<thead>
 		<tr>
