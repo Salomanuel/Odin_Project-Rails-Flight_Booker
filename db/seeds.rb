@@ -20,7 +20,7 @@ end
 	flight = Flight.new
 	flight.departure_airport = random_airport
 	flight.arrival_airport   = random_airport(flight.departure_airport)
-	flight.date = Time.now + rand(1000000).seconds
+	flight.date = Time.now + rand(500000).seconds
 	flight.save
 end
 
