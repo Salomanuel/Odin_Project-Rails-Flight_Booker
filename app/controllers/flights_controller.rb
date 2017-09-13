@@ -7,18 +7,15 @@ class FlightsController < ApplicationController
 
 	def search
 		@airports_select = Airport.all.map{ |a| [a.name, a.id] }
-
-		@flight_days = Flight.all.map{ |x| x.date.strftime("%a, %b %d %Y") }.uniq
-
+		@flight_days = Flight.order(:date).map{ |x| x.date.strftime("%a, %b %d %Y") }.uniq
+		@booking = "ok"
 		if params[:submitted]
 			@flights = find_flight(params[:date], 
 														 params[:departure_airport], 
 														 params[:arrival_airport]    )
-			# Flight.where("departure_airport = ? AND arrival_airport = ?",
-				# params[:departure_airport], params[:arrival_airport])
 		end
 	
-		@booking = "ok"
+		
 	end
 
 	private
