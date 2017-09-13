@@ -1,0 +1,26 @@
+<h1>Booking reservation</h1>
+
+<h2>Flight information</h2>
+<table>
+	<thead>
+		<tr>
+			<td>Departure</td>
+			<td>Arrival</td>
+			<td>Date</td>
+			<td>Time</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @booking.flight.departure_airport.name %></td>
+			<td><%= @booking.flight.arrival_airport.name %></td>
+			<td><%= @booking.flight.date.strftime("%a, %b %d  %Y") %></td>
+			<td><%= @booking.flight.date.strftime("%M:%H") %></td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><%= "Passenger".pluralize(@booking.passengers_number) %> information</h2>
+<% @booking.passengers_number.times do %>
+	
+<% end %>
