@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
 	resources :flights, 	only: [ :index, :search ]
 	resources :airports, 	only: [ :show ]
+	resources :bookings,  only: [ :show, :new, :create ]
 end
