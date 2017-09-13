@@ -21,6 +21,22 @@
 </table>
 
 <h2><%= "Passenger".pluralize(@booking.passengers_number) %> information</h2>
-<% @booking.passengers_number.times do %>
-	
-<% end %>
+<table>
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Email</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @booking.passengers_number.times do %>
+			<tr>
+				<td>field_for_name</td>
+				<td>field_for_email</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+
+
