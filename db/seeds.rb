@@ -16,7 +16,7 @@ def random_airport(airport = nil)
 	end
 end
 
-50.times do |i|
+200.times do |i|
 	flight = Flight.new
 	flight.departure_airport = random_airport
 	flight.arrival_airport   = random_airport(flight.departure_airport)
