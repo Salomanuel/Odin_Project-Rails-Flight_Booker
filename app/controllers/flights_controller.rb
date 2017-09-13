@@ -8,7 +8,7 @@ class FlightsController < ApplicationController
 	def search
 		@airports_select = Airport.all.map{ |a| [a.name, a.id] }
 		@flight_days = Flight.order(:date).map{ |x| x.date.strftime("%a, %b %d %Y") }.uniq
-		@booking = "ok"
+		@booking = Booking.new
 		@flights = find_flight(params) if params[:submitted]
 	end
 
