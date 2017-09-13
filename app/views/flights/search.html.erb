@@ -12,26 +12,30 @@
 <% end %>
 
 <% if params[:submitted] %>
-	<%= form_for @booking do |f| %>
-		<table>
-			<thead>
-				<tr>
-					<th>select</td>
-					<th>number</td>
-					<th>date</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @flights.each do |flight| %>
+	<% if @flights.any? %>
+		<%= form_for @booking do |f| %>
+			<table>
+				<thead>
 					<tr>
-						<td><%= f.radio_button :id, 'id' %></td>
-						<td><%= flight.id %></td>
-						<td><%= flight.date %></td>
+						<th>select</td>
+						<th>number</td>
+						<th>date</td>
 					</tr>
-				<% end %>
-			</tbody>
-		</table>
-		<%= f.submit "book now" %>
+				</thead>
+				<tbody>
+					<% @flights.each do |flight| %>
+						<tr>
+							<td><%= f.radio_button :id, 'id' %></td>
+							<td><%= flight.id %></td>
+							<td><%= flight.date %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= f.submit "book now" %>
+		<% end %>
+		<% else %>
+			<p>no flights found, try another combination</p>
 	<% end %>
 <% end %>
 
