@@ -20,6 +20,7 @@
 						<th>select</td>
 						<th>number</td>
 						<th>date</td>
+						<th>time</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,11 +28,14 @@
 						<tr>
 							<td><%= f.radio_button :id, 'id' %></td>
 							<td><%= flight.id %></td>
-							<td><%= flight.date %></td>
+							<td><%= flight.date.strftime("%a, %b %d %Y") %></td>
+							<td><%= flight.date.strftime("%M:%H") %></td>
 						</tr>
 					<% end %>
 				</tbody>
 			</table>
+			<%= f.label (:passengers) %>
+			<%= f.select(:passengers, (0..4)) %> 
 			<%= f.submit "book now" %>
 		<% end %>
 		<% else %>
@@ -43,5 +47,4 @@
 <ul>
 	<li>organize Airports page and all flights page</li>
 	<li>sortable tables</li>
-	<li>no flights</li>
 </ul>

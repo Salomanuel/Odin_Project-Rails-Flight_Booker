@@ -15,9 +15,9 @@ class FlightsController < ApplicationController
 	private
 		def find_flight(params) #(my_date, departure, arrival)
 			Flight.find_by_sql [ "SELECT * FROM flights 
-				WHERE departure_airport = ? 
-				AND arrival_airport = ?
-				AND strftime('%d %m %Y', date) = ?", 
+				WHERE departure_airport 			 	 = ? 
+				AND 	arrival_airport 					 = ?
+				AND 	strftime('%d %m %Y', date) = ?", 
 					params["departure_airport"], 
 					params["arrival_airport"],
 					Time.parse(params["date"]).strftime('%d %m %Y')]
