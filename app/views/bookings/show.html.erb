@@ -1,4 +1,4 @@
-<h1>Booking reservation</h1>
+<h1>Booking Details</h1>
 
 <h2>Flight information</h2>
 <table>
@@ -21,22 +21,46 @@
 </table>
 
 <h2><%= "Passenger".pluralize(@booking.passengers_number) %> information</h2>
+<%= form_for @passenger do |f| %>
+
 <table>
-	<thead>
-		<tr>
-			<td>Name</td>
-			<td>Email</td>
-		</tr>
-	</thead>
-	<tbody>
-		<% @booking.passengers_number.times do %>
+		<thead>
 			<tr>
-				<td>field_for_name</td>
-				<td>field_for_email</td>
+				<td>Name</td>
+				<td>Email</td>
+				<td>Booking id</td>
 			</tr>
-		<% end %>
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= @passenger.name %></td>
+				<td><%= @passenger.email %></td>
+				<td><%= @passenger.booking.id %></td>
+			</tr>
+		</tbody>
+	</table>
+
+<br>
+
+	<table>
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Email</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @booking.passengers_number.times do |i| %>
+				<tr>
+					<td><%= f.text_field  :name %></td>
+					<td><%= f.email_field :email %><td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= f.hidden_field :booking_id, value: @booking.id %>
+	<%= f.submit "book tickets" %>
+<% end %>
 
 
 

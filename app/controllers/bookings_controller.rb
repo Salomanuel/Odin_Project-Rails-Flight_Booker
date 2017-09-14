@@ -11,6 +11,9 @@ class BookingsController<ApplicationController
 
 	def show
 		@booking = Booking.find(params[:id])
+		# @booking.passengers_number.times do |i|
+		@passenger = @booking.passengers.new
+		# end
 	end
 
 	private
