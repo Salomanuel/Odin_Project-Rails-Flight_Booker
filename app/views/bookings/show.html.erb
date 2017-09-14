@@ -19,3 +19,20 @@
 		</tr>
 	</tbody>
 </table>
+<h2><%= "Passenger".pluralize(@booking.passengers_number) %> information</h2>
+<table>
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>email</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @booking.passengers_number.times do |i| %>
+			<tr>
+				<td><%= @booking.flight.date.strftime("%a, %b %d  %Y") %></td>
+				<td><%= @booking.flight.date.strftime("%H:%M") %></td>
+			</tr>
+		<% end %>	
+	</tbody>
+</table>
