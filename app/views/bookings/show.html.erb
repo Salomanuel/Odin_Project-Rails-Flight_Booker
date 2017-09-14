@@ -28,10 +28,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @booking.passengers_number.times do |i| %>
+		<% @booking.passengers.each do |passenger| %>
 			<tr>
-				<td><%= @booking.flight.date.strftime("%a, %b %d  %Y") %></td>
-				<td><%= @booking.flight.date.strftime("%H:%M") %></td>
+				<td><%= passenger.name %></td>
+				<td><%= passenger.email %></td>
 			</tr>
 		<% end %>	
 	</tbody>

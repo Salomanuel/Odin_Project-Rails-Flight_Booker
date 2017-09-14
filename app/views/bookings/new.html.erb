@@ -22,6 +22,17 @@
 
 <h2><%= "Passenger".pluralize(@passengers_number) %> information</h2>
 <%= form_for @booking do |f| %>
+	Passengers:
+	<ul>
+		<%= f.fields_for :passengers, @booking.passengers.build do |p| %>
+			<li>
+				<%= p.label				:name %>
+				<%= p.text_field  :name %>
+				<%= p.label				:email %>	
+				<%= p.email_field :email %>
+			</li>
+		<% end %>
+	</ul>
 	<%= f.hidden_field(:flight, value: @flight.id) %>
 	<%= f.hidden_field(:passengers_number, value: @passengers_number) %>
 	<%= f.submit "book tickets" %>
