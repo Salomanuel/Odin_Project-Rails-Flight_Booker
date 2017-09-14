@@ -1,11 +1,19 @@
 class BookingsController<ApplicationController
 
+	def new
+		@flight 					 = Flight.find(params[:flight_id])
+		@passengers_number = params[:passengers_number]
+		@booking					 = Booking.new
+	end
+
+
 	def create
-		@booking = Booking.new(booking_params)
+		@flight  = Flight.find(params[:booking][:flight])
+		@booking = @flight.bookings.new(booking_params)
 		if @booking.save
 			redirect_to @booking
 		else
-			render inline: "<h1>oh no</h1"
+			render inline: "<h1>oh no</h1><p><%= @booking.errors.messages %>"
 		end
 	end
 

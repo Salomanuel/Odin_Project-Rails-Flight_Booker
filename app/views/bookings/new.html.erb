@@ -1,0 +1,32 @@
+<h1>Booking Details</h1>
+
+<h2>Flight information</h2>
+<table>
+	<thead>
+		<tr>
+			<td>Departure</td>
+			<td>Arrival</td>
+			<td>Date</td>
+			<td>Time</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @flight.departure_airport.name %></td>
+			<td><%= @flight.arrival_airport.name %></td>
+			<td><%= @flight.date.strftime("%a, %b %d  %Y") %></td>
+			<td><%= @flight.date.strftime("%H:%M") %></td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><%= "Passenger".pluralize(@passengers_number) %> information</h2>
+<%= form_for @booking do |f| %>
+	<%= f.hidden_field(:flight, value: @flight.id) %>
+	<%= f.hidden_field(:passengers_number, value: @passengers_number) %>
+	<%= f.submit "book tickets" %>
+
+<% end %>
+
+
+

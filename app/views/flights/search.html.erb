@@ -13,7 +13,7 @@
 
 <% if params[:submitted] %>
 	<% if @flights.any? %>
-		<%= form_for @booking do |f| %>
+		<%= form_tag("/bookings/new", method: "get") do %>
 			<table>
 				<thead>
 					<tr>
@@ -26,7 +26,7 @@
 				<tbody>
 					<% @flights.each do |flight| %>
 						<tr>
-							<td><%= f.radio_button :flight_id, flight.id %></td>
+							<td><%= radio_button_tag :flight_id, flight.id %></td>
 							<td><%= flight.id %></td>
 							<td><%= flight.date.strftime("%a, %b %d %Y") %></td>
 							<td><%= flight.date.strftime("%M:%H") %></td>
@@ -34,9 +34,9 @@
 					<% end %>
 				</tbody>
 			</table>
-			<%= f.label (:passengers) %>
-			<%= f.select(:passengers_number, (1..4)) %> 
-			<%= f.submit "book now" %>
+			<%= label_tag (:passengers) %>
+			<%= select_tag(:passengers_number, options_for_select(1..4)) %> 
+			<%= submit_tag "book now" %>
 		<% end %>
 		<% else %>
 			<p>no flights found, try another combination</p>
