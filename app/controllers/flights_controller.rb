@@ -17,9 +17,11 @@ class FlightsController < ApplicationController
 			Flight.find_by_sql [ "SELECT * FROM flights 
 				WHERE departure_airport 			 	 = ? 
 				AND 	arrival_airport 					 = ?
-				AND 	strftime('%d %m %Y', date) = ?", 
+				AND 	extract(day from date)     = ?
+				AND   extract(month from date)   = ?",
 					params["departure_airport"], 
 					params["arrival_airport"],
-					Time.parse(params["date"]).strftime('%d %m %Y')]
+					Time.parse(params["date"]).strftime('%d').to_i,
+				  Time.parse(params["date"]).strftime('%m').to_i]
 		end
 end
