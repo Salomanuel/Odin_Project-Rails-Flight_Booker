@@ -29,7 +29,7 @@
 							<td><%= radio_button_tag :flight_id, flight.id %></td>
 							<td><%= flight.id %></td>
 							<td><%= flight.date.strftime("%a, %b %d %Y") %></td>
-							<td><%= flight.date.strftime("%M:%H") %></td>
+							<td><%= flight.date.strftime("%H:%M") %></td>
 						</tr>
 					<% end %>
 				</tbody>
