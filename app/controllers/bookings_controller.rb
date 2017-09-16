@@ -12,10 +12,16 @@ class BookingsController<ApplicationController
 		@flight  		= Flight.find(params[:booking][:flight])
 		@booking 		= @flight.bookings.new(booking_params)
 		@passengers = @booking.passengers.build
-		if @booking.save
-			redirect_to @booking
-		else
-			render inline: "<h1>oh no</h1><p><%= @booking.errors.messages %>"
+		
+		respond_to do |format|
+			if @booking.save
+				# tell the PassengerMailer to send an email after saving
+				PassengerMailer.welcome_email(@passenger).deliver_later
+				format.html {redirect_to( @booking, notice: "user was created") }
+				format.json {render json: @passenger, status: :created, location: @passenger }
+			else
+				render inline: "<h1>oh no</h1><p><%= @booking.errors.messages %>"
+			end
 		end
 	end
 
