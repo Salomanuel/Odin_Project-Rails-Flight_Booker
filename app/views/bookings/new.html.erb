@@ -25,7 +25,7 @@
 	Passengers:
 	<ul>
 		<% @passengers_number.times do |i| %>
-			<%= f.fields_for :passengers, @booking.passengers.build do |p| %>
+			<%= f.fields_for :passengers, @passengers do |p| %>
 				<li>
 					<%= p.label				:name %>
 					<%= p.text_field  :name %>

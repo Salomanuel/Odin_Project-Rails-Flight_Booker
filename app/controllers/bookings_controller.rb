@@ -9,8 +9,9 @@ class BookingsController<ApplicationController
 
 
 	def create
-		@flight  = Flight.find(params[:booking][:flight])
-		@booking = @flight.bookings.new(booking_params)
+		@flight  		= Flight.find(params[:booking][:flight])
+		@booking 		= @flight.bookings.new(booking_params)
+		@passengers = @booking.passengers.build
 		if @booking.save
 			redirect_to @booking
 		else
@@ -20,9 +21,7 @@ class BookingsController<ApplicationController
 
 	def show
 		@booking = Booking.find(params[:id])
-		# @booking.passengers_number.times do |i|
 		@passenger = @booking.passengers.new
-		# end
 	end
 
 	def index
