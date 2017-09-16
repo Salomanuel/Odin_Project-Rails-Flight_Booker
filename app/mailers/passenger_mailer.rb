@@ -6,4 +6,12 @@ class PassengerMailer < ApplicationMailer
 		@url  = 'http://example.com/login'
 		mail(to: @user.email, subject: 'Welcome mate')
 	end
+
+	def booking_email(passenger)
+		@passenger = passenger
+		@booking   = @passenger.booking
+		@flight    = @booking.flight
+		mail(to: @passenger.email, subject: 'Your booking')
+	end
 end
+

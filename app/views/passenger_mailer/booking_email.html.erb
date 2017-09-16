@@ -1,0 +1,27 @@
+<h1>Flight Booked!</h1>
+
+<p>Hello <%= @passenger.name %>, here is the resume of your flight:</p>
+
+<table>
+	<thead>
+		<tr>
+			<td>Departure</td>
+			<td>Arrival</td>
+			<td>Date</td>
+			<td>Time</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @booking.flight.departure_airport.name %></td>
+			<td><%= @booking.flight.arrival_airport.name %></td>
+			<td><%= @booking.flight.date.strftime("%a, %b %d  %Y") %></td>
+			<td><%= @booking.flight.date.strftime("%H:%M") %></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>
+	Just show up at the <%= @booking.flight.departure_airport.name %> 
+		airport in time
+</p>
