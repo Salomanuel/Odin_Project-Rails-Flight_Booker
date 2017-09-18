@@ -2,11 +2,14 @@
 
 <%= form_tag("/flights/search", method: "get") do %>
 		<%= label_tag( :departure_airport) %>
-		<%= select_tag(:departure_airport, 	options_for_select(@airports_select)) %>
+		<%= select_tag(:departure_airport, 	
+			options_for_select(@airports_select, @departure_airport)) %>
 		<%= label_tag( :arrival_airport) %>
-		<%= select_tag(:arrival_airport, 		options_for_select(@airports_select)) %>
+		<%= select_tag(:arrival_airport, 		
+			options_for_select(@airports_select, @arrival_airport)) %>
 		<%= label_tag( :date) %>
-		<%= select_tag(:date, 							options_for_select(@flight_days)) %>
+		<%= select_tag(:date, 							
+			options_for_select(@flight_days,		 @date)) %>
 		<%= hidden_field_tag(:submitted, true) %>
 		<%= submit_tag "search flight" %>
 <% end %>
@@ -38,8 +41,12 @@
 			<%= select_tag(:passengers_number, options_for_select(1..4)) %> 
 			<%= submit_tag "book now" %>
 		<% end %>
-		<% else %>
-			<p>no flights found, try another combination</p>
+  <% else %>
+    <% if same_airports? %>
+      <p>that flight is way too short, please select different departure and arrival airports</p> 
+    <% else %>
+      <p>no flights found, try another combination</p>
+    <% end %>
 	<% end %>
 <% end %>
 
