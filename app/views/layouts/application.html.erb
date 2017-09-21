@@ -6,17 +6,24 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <style>
-      table       { border-collapse: collapse; }
-      table,th,td {border: 1px solid black;}
-    </style>
   </head>
-
   <body>
-    <%= link_to "search flight",  flights_search_path %>
-    <%= link_to "all flights",    flights_path %>
-    <%= link_to "all bookings",   bookings_path %>
+    <header>
+      <ul>
+        <li><%= link_to "search flight",  flights_search_path %></li>
+        <li><%= link_to "all flights",    flights_path %></li>
+        <li><%= link_to "all bookings",   bookings_path %></li>
+        <li><%= link_to "about", "#" %></li>
+        <li><%= link_to "author",         "#" %></li>
+      </ul>
+    </header>
+    <section class="brand">
+      <h1 id="title">SaloFlights</h1>
+      <h2 id="subtitle">Taking off is only half of the story<br>
+      Just wait for the landing</h2>
+    </section>
     <%= yield %>
+    <
     <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
