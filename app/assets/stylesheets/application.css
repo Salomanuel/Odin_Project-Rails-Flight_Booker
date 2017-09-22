@@ -67,19 +67,21 @@ HEADER and TITLE
 
 	header ul {
 		background-color: white;
-		padding:10px;
+		height: 20px;
 	}
+	
 
 	header li{
 		float: left;
-		margin-right: 10px;
-		padding: 5px;
+		margin: 0 10px;
+		padding: 0px;
 		font: small-caps bold 100% sans;
-		position: relative; bottom: 15px;
+		/*position: relative; bottom: 15px;*/
 	}
 
+
+
 	.brand {
-		clear: both;
 		display: block;
 		text-align: right;
 		margin: 20px;
