@@ -118,32 +118,44 @@
 // 	/* btw the navigation header should have <nav> things 
 // 	rule of thirds*/
 
+/* NAVBAR */
 
-h1 { 
-	text-transform: uppercase;
+	.navbar-brand-main {
+	    width: 160px;
+	    display: inline-block;
+	}
+
+	.navbar-brand { 
+
+	    display: inline-block;
+	    text-align: center;
+	    font-variant: small-caps; 
+	    font-size: small;
+	    height: 0px;
+	    line-height: 1.1;
+	    height: 25px; 
+	    position: relative;
+	    bottom: 4px;
+	}
+
+	.navbar-brand img { 
+	    height: 25px; 
+	}
+
+/* SALOFLIGHTS BRAND */
+
+body { padding-top: 60px; }
+
+.brand h1, h2{ 
+	font-variant: small-caps;
 	font-family: "Futura-CondensedExtraBold", Futura, sans-serif; 
 	font-stretch: condensed;
 	font-weight: 800;
+	height: 20px;
 }
+.brand h2 { font-size: 100%; }
 
-.navbar-brand-main {
-    width: 160px;
-    display: inline-block;
-}
-
-.navbar-brand { 
-
-    display: inline-block;
-    text-align: center;
-    font-variant: small-caps; 
-    font-size: small;
-    height: 0px;
-    line-height: 1.1;
-    height: 25px; 
-    position: relative;
-    bottom: 4px;
-}
-
-.navbar-brand img { 
-    height: 25px; 
+.brand { 
+	float: right; 
+	width: 300px;
 }
