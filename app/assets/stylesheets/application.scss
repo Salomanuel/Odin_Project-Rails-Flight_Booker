@@ -171,9 +171,18 @@ background-image: url("wallpaper");  }
 .jumbotron { 
 	width: 400px; 
 	background: rgba(238,238,238,0.7);
-	margin: 10px;
+	margin-left:120px;
+}
+
+.content {
 	margin-top: 90px;
 	padding-top: 10px;
 }
 
 .search {	width: 150px; }
+
+.flight-nav { 
+	width: 120px; 
+	padding: 0;
+	position: fixed;
+}
