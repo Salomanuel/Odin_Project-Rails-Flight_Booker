@@ -48,6 +48,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pg'
+  gem 'rails_real_favicon'
 end
 
 group :development do
