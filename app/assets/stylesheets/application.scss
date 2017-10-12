@@ -118,6 +118,9 @@
 // 	/* btw the navigation header should have <nav> things 
 // 	rule of thirds*/
 
+body {
+background-image: url("wallpaper");  }
+
 /* NAVBAR */
 
 	.navbar-brand-main {
@@ -144,18 +147,33 @@
 
 /* SALOFLIGHTS BRAND */
 
-body { padding-top: 60px; }
+	body { padding-top: 60px; }
 
-.brand h1, h2{ 
-	font-variant: small-caps;
-	font-family: "Futura-CondensedExtraBold", Futura, sans-serif; 
-	font-stretch: condensed;
-	font-weight: 800;
-	height: 20px;
-}
-.brand h2 { font-size: 100%; }
+	.brand h1, h2{ 
+		font-variant: small-caps;
+		font-family: "Futura-CondensedExtraBold", Futura, sans-serif; 
+		font-stretch: condensed;
+		font-weight: 800;
+		height: 20px;
+	}
+	.brand h1 { font-size: big; color: "yellow";}
 
-.brand { 
-	float: right; 
-	width: 300px;
+	.brand h2 { font-size: 100%; }
+
+	.brand { 
+		float: right; 
+		width: 300px;
+		display: block-inline;
+		position: fixed;
+		right: 0;
+	}
+
+.jumbotron { 
+	width: 400px; 
+	background: rgba(238,238,238,0.7);
+	margin: 10px;
+	margin-top: 90px;
+	padding-top: 10px;
 }
+
+.search {	width: 150px; }
