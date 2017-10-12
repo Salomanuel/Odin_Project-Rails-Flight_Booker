@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
       "Releasing Mile High Club membership cards",
       "OUR planes are made of the same material as the black boxes",
       "Just kidding, mate",
+      "Where we are going we don't need winglets",
+      "Yeah, that's a deployed speed brake",
       "Have you seen the movie Flight with Denzel Washington?",
       "Red 5 - Going in!"]
 	end
