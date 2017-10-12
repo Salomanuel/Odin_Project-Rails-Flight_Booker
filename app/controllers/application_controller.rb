@@ -6,4 +6,15 @@ class ApplicationController < ActionController::Base
   def hello
   	render inline: "<h1>hello</h1>"
   end
+
+  def stupid_sentences
+    ["Just wait for the landing",
+    	"Look ma, no hands!",
+    	"Every landing you can walk away from...",
+      "Releasing Mile High Club membership cards",
+      "OUR planes are made of the same material as the black boxes",
+      "Just kidding, mate",
+      "Have you seen the movie Flight with Denzel Washington?",
+      "Red 5 - Going in!"]
+	end
 end
