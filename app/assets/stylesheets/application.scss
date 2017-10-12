@@ -125,3 +125,25 @@ h1 {
 	font-stretch: condensed;
 	font-weight: 800;
 }
+
+.navbar-brand-main {
+    width: 160px;
+    display: inline-block;
+}
+
+.navbar-brand { 
+
+    display: inline-block;
+    text-align: center;
+    font-variant: small-caps; 
+    font-size: small;
+    height: 0px;
+    line-height: 1.1;
+    height: 25px; 
+    position: relative;
+    bottom: 4px;
+}
+
+.navbar-brand img { 
+    height: 25px; 
+}
