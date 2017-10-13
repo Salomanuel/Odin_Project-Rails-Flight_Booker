@@ -97,7 +97,8 @@
           <li><%= link_to "all bookings",   bookings_path %></li>
           <li><%= link_to "about", "#" %></li>
         </ul>
-      </div>   
+      </div>
+
       <div class="container col-md-11 col-xs-11 jumbotron content">       
         <!-- Main component for a primary marketing message or call to action -->
         <div>
@@ -105,6 +106,13 @@
         </div>
       </div>
     </div>
+
+
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%=name%>">
+        <%= message %>
+      </div>
+    <% end %> 
 
     <%= debug(params) if Rails.env.development? %>
 

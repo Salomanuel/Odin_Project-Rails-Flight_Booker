@@ -200,3 +200,11 @@ th,td { text-align: center; vertical-align: center; }
 .airports { width: 80px; margin: 2px; }
 
 ul { list-style-type: none; }
+
+.alert { 
+	width: auto; 
+	margin: 0;
+	position: absolute;
+	top: 80px;
+	left: 30px;
+}
