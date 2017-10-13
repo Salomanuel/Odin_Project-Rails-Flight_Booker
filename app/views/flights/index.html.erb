@@ -1,14 +1,12 @@
-<h1>All Flights</h1>
-
-<h2>Airports</h2>
-<ul>
+<h3>Airports</h2>
+<ul class="list-inline">
 	<% @airports.each do |airport| %>
-		<li><%= link_to airport.name, airport %></li>
+		<li><div class="btn btn-primary airports"><%= link_to airport.name, airport %></div></li>
 	<% end %>
 </ul>
 
-<h2>Flights</h2>
-<table>
+<h3>Flights</h2>
+<table class="table table-striped">
 	<thead>
 		<tr>
 			<th>number</th>
