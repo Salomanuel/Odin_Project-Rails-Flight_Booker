@@ -154,9 +154,9 @@ background-image: url("wallpaper");  }
 		font-family: "Futura-CondensedExtraBold", Futura, sans-serif; 
 		font-stretch: condensed;
 		font-weight: 800;
-		height: 20px;
+		height: 40px;
 	}
-	.brand h1 { font-size: big; color: "yellow";}
+	.brand h1 { font-size: 4em;}
 
 	.brand h2 { font-size: 100%; }
 
@@ -165,24 +165,32 @@ background-image: url("wallpaper");  }
 		width: 300px;
 		display: block-inline;
 		position: fixed;
-		right: 0;
+		right: 10px;
 	}
 
-.jumbotron { 
-	width: 400px; 
-	background: rgba(238,238,238,0.7);
-	margin-left:120px;
-}
+/* MAIN LAYOUT BIG THINGS */
 
-.content {
-	margin-top: 90px;
-	padding-top: 10px;
-}
+	.jumbotron { 
+		width: 400px; 
+		background: rgba(238,238,238,0.7);
+		margin-left:120px;
+	}
 
-.search {	width: 150px; }
+	.content {
+		margin-top: 90px;
+		padding-top: 10px;
+	}
 
-.flight-nav { 
-	width: 120px; 
-	padding: 0;
-	position: fixed;
-}
+	.search {	width: 150px; }
+
+	.flight-nav { 
+		width: 120px; 
+		padding: 0;
+		position: fixed;
+	}
+
+/* TABLES */
+th,td { text-align: center; vertical-align: center; }
+
+.passengers { width: auto; display: inline; }
+.book-now { margin-top: 10px; width: 100%; display: block; }
