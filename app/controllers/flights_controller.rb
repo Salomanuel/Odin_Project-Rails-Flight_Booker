@@ -14,7 +14,15 @@ class FlightsController < ApplicationController
 		@date							 ||= @flight_days[0]
 
 		@booking = Booking.new
-		@flights = find_flight(params) if params[:submitted]
+		if params[:submitted]
+			@flights = find_flight(params) 
+			if !@flights.any?
+				flash.now[:warning] = "no flights found, try another combination"
+				if same_airports?
+					flash.now[:warning] = "Come on, that flight is way too short, please select different departure and arrival airports"
+				end
+			end
+		end
 	end
 
 	def same_airports?

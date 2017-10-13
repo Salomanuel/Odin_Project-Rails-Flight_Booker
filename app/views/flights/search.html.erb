@@ -70,12 +70,6 @@
 			<%= select_tag(:passengers_number, options_for_select(1..4), class: "form-control passengers") %> 
 			<%= submit_tag "book now", class: "btn btn-success book-now" %>
 		<% end %>
-  <% else %>
-    <% if same_airports? %>
-      <p>that flight is way too short, please select different departure and arrival airports</p> 
-    <% else %>
-      <p>no flights found, try another combination</p>
-    <% end %>
 	<% end %>
 <% end %>
 

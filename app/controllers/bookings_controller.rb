@@ -4,9 +4,8 @@ class BookingsController<ApplicationController
 		if params[:flight_id]
 			@flight 					 = Flight.find(params[:flight_id])
 		else
-			redirect_to :root
-						flash[:danger] = "please select a flight"
-
+			redirect_to "/flights/search"
+			flash[:danger] = "please select a flight"
 		end
 		@passengers_number = params[:passengers_number].to_i
 		@booking					 = Booking.new
@@ -15,12 +14,7 @@ class BookingsController<ApplicationController
 
 
 	def create
-		if params[:booking][:flight]
-			@flight  = Flight.find(params[:booking][:flight])
-		else
-			flash[:danger] = "please select a flight"
-			redirect_to :root
-		end
+		@flight  = Flight.find(params[:booking][:flight])
 		@booking = @flight.bookings.new(booking_params)
 		if @booking.save
 			redirect_to @booking
