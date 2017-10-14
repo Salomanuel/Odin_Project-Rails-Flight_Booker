@@ -1,7 +1,7 @@
-<h1>Booking Details</h1>
+<h2>Booking Details</h2>
 
-<h2>Flight information</h2>
-<table>
+<h3>Flight information</h3>
+<table class="table">
 	<thead>
 		<tr>
 			<td>Departure</td>
@@ -20,22 +20,20 @@
 	</tbody>
 </table>
 
-<h2><%= "Passenger".pluralize(@passengers_number) %> information</h2>
+<h3><%= "Passenger".pluralize(@passengers_number) %> information</h3>
 <%= form_for @booking do |f| %>
-	Passengers:
 	<ul>
 		<% @passengers_number.times do |i| %>
+		<h3><%= @ordinal_numbers[i] %> passenger</h3>
 			<%= f.fields_for :passengers, @booking.passengers.build do |p| %>
 				<li>
-					<%= p.label				:name %>
-					<%= p.text_field  :name %>
-					<%= p.label				:email %>	
-					<%= p.email_field :email %>
+					<%= p.text_field  :name, class: "form-control", placeholder: "name" %>
+					<%= p.email_field :email, class: "form-control", placeholder: "email" %>
 				</li>
 			<% end %>
 		<% end %>
 	</ul>
 	<%= f.hidden_field(:flight, value: @flight.id) %>
 	<%= f.hidden_field(:passengers_number, value: @passengers_number) %>
-	<%= f.submit "book tickets" %>
+	<%= f.submit "book tickets", class: "btn btn-success" %>
 <% end %>
