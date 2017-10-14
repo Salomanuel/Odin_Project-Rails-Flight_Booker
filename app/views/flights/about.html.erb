@@ -1,0 +1,85 @@
+<head>
+	<style>
+		.jumbotron { width: auto; }
+		.jumbotron h3 { font-weight: bold; }
+		.jumbotron p { font-size: 1em; }
+	</style>
+</head>
+
+<h2>About Saloflights</h2>
+
+<p>This app is <a href="https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms">an exercise from the OdinProject</a>. I'll quote directly what they say:</p>
+
+<blockquote>
+	<h3>Project: Flight Booker</h3>
+
+	<p>
+		In this project, you'll get a chance to tackle some more advanced forms. 
+		In this case, we'll build the first three steps of a typical checkout 
+		process for booking a one-way flight:
+	</p>
+
+	<ol>
+		<li>Enter desired dates / airports and click "Search"</li>
+		<li>Choose from among a list of eligible flights</li>
+	  <li>Enter passenger information for all passengers</li>
+	</ol>
+	
+	<h3>Your Task</h3>
+
+	<p>
+		We'll be creating a one-way flight booker. 
+		You'll get lots of practice <strong>populating and building 
+		dropdown menus, radio buttons, and nested submissions.</strong>
+	</p>
+
+	<p>
+		This project will require you to <strong>seed your database</strong>, 
+		so use your <code>db/seeds.rb</code> file to write the code necessary to populate 
+		Airports and Flights.
+	</p>
+
+	<p>
+		It's also a good exercise on <strong>setting up associations</strong>, so you can ask 
+		<code>Flight.first.from_airport</code>, <code>Flight.first.to_airport</code> 
+		and get back <code>Airport</code> objects. Same for <code>Airport.first.departing_flights</code> 
+		and <code>Airport.first.arriving_flights</code>, which should return a list of <code>Flight</code> objects.
+	</p>
+
+	<p>
+		You will <strong>search and view results in the same page</strong>. Set up your <code>FlightsController</code> 
+		and routes.
+	</p>
+
+	<p>
+		 The <strong><code>DATE</code> dropdown should only include dates that have existing flights</strong>.
+	</p>
+
+	<p>
+		<strong>Keep the search form active at the top</strong> so the user can try running a new search.
+	</p>
+
+	<p>
+		 Each returned flight should render with a radio button next to it. 
+		 <strong>The user will select which flight to submit and move onto the next step</strong>. 
+		 You'll need to include a hidden field that contains the number of passengers.
+	</p>
+
+	<p>
+		Set up associations between Bookings, Passengers, and Flights.
+	</p>
+
+	<p>
+		Set up your <code>BookingsController#new</code> action, which should have received the flight ID 
+		and passenger number parameters, and use it to help <strong>render a form for a new booking 
+		which displays the currently chosen date, airports, flight ID and a set of fields 
+		to enter personal information for each passenger</strong>. 
+		You'll want to <strong>create a new blank Passenger object in your controller for each passenger</strong>.
+	</p>
+
+	<p>
+		You'll need your <code>#create</code> action to create a new Booking (linking it to the appropriate Flight) 
+		but it will also need to <strong>accept the nested attributes for each of the Passenger objects 
+		and create a new Passenger from them</strong>.
+	</p>
+</blockquote>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-	root 'flights#search'
+	
 
-	get 'flights/search'
+	get '/search', to: 'flights#index'
+	get '/about',  to: 'flights#about'
+	root 'flights#about'
 
 	resources :flights, 		only: [ :index, :search ]
 	resources :airports, 		only: [ :show ]
