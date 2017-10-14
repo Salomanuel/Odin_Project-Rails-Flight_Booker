@@ -4,7 +4,7 @@ class BookingsController<ApplicationController
 		if params[:flight_id]
 			@flight = Flight.find(params[:flight_id])
 		else
-			redirect_to "/flights/search"
+			redirect_to "/search"
 			flash[:danger]   = "no flight was selected (with javascript we would not start from scratch when this happens)"
 		end
 		@passengers_number = params[:passengers_number].to_i
