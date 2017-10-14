@@ -1,7 +1,7 @@
 class FlightsController < ApplicationController
 
 	def index
-		@flights  = Flight.all
+		@flights  = Flight.paginate(page: params[:page], :per_page => 5)
 		@airports = Airport.all
 	end
 

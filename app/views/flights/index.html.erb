@@ -6,23 +6,26 @@
 </ul>
 
 <h3>Flights</h2>
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>number</th>
-			<th>departure</th>
-			<th>arrival</th>
-			<th>date</th>
-			<th>time</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @flights.order(:date).each do |flight| %>
+<%= will_paginate %>
+	<table class="table table-striped">
+		<thead>
 			<tr>
-				<td><%= flight.id %></td>
-				<td><%= flight.departure_airport.name %></td>
-				<td><%= flight.arrival_airport.name %></td>
-				<td><%= flight.date.strftime("%a, %b %d") %></td>
-				<td><%= flight.date.strftime("%H:%M") %></td>
-		<% end %>
-</table>
+				<th>number</th>
+				<th>departure</th>
+				<th>arrival</th>
+				<th>date</th>
+				<th>time</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<% @flights.order(:date).each do |flight| %>
+					<tr>
+						<td><%= flight.id %></td>
+						<td><%= flight.departure_airport.name %></td>
+						<td><%= flight.arrival_airport.name %></td>
+						<td><%= flight.date.strftime("%a, %b %d") %></td>
+						<td><%= flight.date.strftime("%H:%M") %></td>
+				<% end %>
+
+	</table>
