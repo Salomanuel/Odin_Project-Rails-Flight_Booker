@@ -2,10 +2,10 @@ class BookingsController<ApplicationController
 
 	def new
 		if params[:flight_id]
-			@flight 					 = Flight.find(params[:flight_id])
+			@flight = Flight.find(params[:flight_id])
 		else
 			redirect_to "/flights/search"
-			flash[:danger] = "please select a flight"
+			flash[:danger] = "no flight was selected (with javascript we would not start from scratch when this happens)"
 		end
 		@passengers_number = params[:passengers_number].to_i
 		@booking					 = Booking.new
