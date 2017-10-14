@@ -1,122 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// /* old css */
-
-// 	/* RESET */
-
-// 		/* http://meyerweb.com/eric/tools/css/reset/ 
-// 		   v2.0 | 20110126
-// 		   License: none (public domain)
-// 		*/
-
-// 		html, body, div, span, applet, object, iframe,
-// 		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-// 		a, abbr, acronym, address, big, cite, code,
-// 		del, dfn, em, img, ins, kbd, q, s, samp,
-// 		small, strike, strong, sub, sup, tt, var,
-// 		b, u, i, center,
-// 		dl, dt, dd, ol, ul, li,
-// 		fieldset, form, label, legend,
-// 		table, caption, tbody, tfoot, thead, tr, th, td,
-// 		article, aside, canvas, details, embed, 
-// 		figure, figcaption, footer, header, hgroup, 
-// 		menu, nav, output, ruby, section, summary,
-// 		time, mark, audio, video {
-// 		        margin: 0;
-// 		        padding: 0;
-// 		        border: 0;
-// 		        font-size: 100%;
-// 		        font: inherit;
-// 		        vertical-align: baseline;
-// 		}
-// 		/* HTML5 display-role reset for older browsers */
-// 		article, aside, details, figcaption, figure, 
-// 		footer, header, hgroup, menu, nav, section {
-// 		        display: block;
-// 		}
-// 		body {
-// 		        line-height: 1;
-// 		}
-// 		ol, ul {
-// 		        list-style: none;
-// 		}
-// 		blockquote, q {
-// 		        quotes: none;
-// 		}
-// 		blockquote:before, blockquote:after,
-// 		q:before, q:after {
-// 		        content: '';
-// 		        content: none;
-// 		}
-// 		table {
-// 		        border-collapse: collapse;
-// 		        border-spacing: 0;
-// 		}
-
-// 	/* ============================================
-// 	GENERAL
-// 	===============================================*/
-
-// 		body {
-// 			background-image: url("wallpaper.jpg");
-// 		}
-
-// 		a {
-// 			text-decoration: none;
-// 		}
-
-// 	/* ============================================
-// 	HEADER and TITLE
-// 	===============================================*/
-
-// 		header ul {
-// 			background-color: white;
-// 			height: 20px;
-// 		}
-		
-
-// 		header li{
-// 			float: left;
-// 			margin: 0 10px;
-// 			padding: 0px;
-// 			font: small-caps bold 100% sans;
-// 			/*position: relative; bottom: 15px;*/
-// 		}
-
-
-
-// 		.brand {
-// 			display: block;
-// 			text-align: right;
-// 			margin: 20px;
-// 		}
-
-// 		#title {
-// 			font: bold 300% sans;
-// 		}
-// 		#subtitle {
-// 			font: small-caps bold 75% sans;
-// 		}
-
-// 	/* =================================================
-// 	TABLES
-// 	================================================*/
-// 		table { 
-// 			border-collapse: collapse; 
-// 		}
-// 		table,th,td {
-// 			border: 1px solid black;
-// 		}
-
-
-
-// 	/*================================================
-// 	BODY
-// 	==================================================/*
-
-
-// 	/* btw the navigation header should have <nav> things 
-// 	rule of thirds*/
 
 body {
 background-image: url("wallpaper");  }
@@ -190,21 +73,21 @@ background-image: url("wallpaper");  }
 	}
 
 /* TABLES */
-th,td { text-align: center; vertical-align: center; }
+	th,td { text-align: center; vertical-align: center; }
 
-.passengers { width: auto; display: inline; }
-.book-now { margin-top: 10px; width: 100%; display: block; }
+	.passengers { width: auto; display: inline; }
+	.book-now { margin-top: 10px; width: 100%; display: block; }
 
-.btn a { color: white; }
+	.btn a { color: white; }
 
-.airports { width: 80px; margin: 2px; }
+	.airports { width: 80px; margin: 2px; }
 
-ul { list-style-type: none; }
+	ul { list-style-type: none; }
 
-.alert { 
-	width: auto; 
-	margin: 0;
-	position: absolute;
-	top: 80px;
-	left: 30px;
-}
+	.alert { 
+		width: auto; 
+		margin: 0;
+		position: absolute;
+		top: 80px;
+		left: 30px;
+	}
