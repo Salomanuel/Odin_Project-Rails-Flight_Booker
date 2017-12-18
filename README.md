@@ -1,6 +1,6 @@
  Ruby on Rails >> Advanced Forms and Active Record >> [Project: Building Advanced Forms](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms)
 
- [live link](manuel-flight-booker.herokuapp.com)   
+ see the application working online: [live link](manuel-flight-booker.herokuapp.com)   
 
 
 # Building Advanced Forms
