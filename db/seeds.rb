@@ -1,5 +1,6 @@
-Airport::delete_all
-Flight::delete_all
+Airport::delete_all	# BE CAREFUL WITH THAT
+Flight::delete_all	# ALSO WITH THAT
+			# SERIOUSLY, DON'T SEED IN PRODUCTION
 
 cities = ["Roma", "Paris", "London", "Berlin", "Madrid"].sort
 
