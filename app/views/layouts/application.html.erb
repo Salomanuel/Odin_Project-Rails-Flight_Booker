@@ -53,22 +53,22 @@
             </div>
           </div>          
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right ">
-            <li class="<%= is_active?('/') %>">       <%= link_to "About Me", root_path %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle <%= is_active?('/overview') %>" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Overview", portfolio_path %></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Apps</li>
-                <li><%= link_to "Stupid Squares (Javascript)", squares_path %></li>
-                <li><a href="https://manuel-flight-booker.herokuapp.com/">Saloflights</a></li>                
-                <li><a href="https://manuel-sample-app.herokuapp.com/about">Super Sample App</a></li>
-                <li><a href="https://fiammettabook.herokuapp.com/">Fiammettabook</a></li>
-                <li><%= link_to "Ruby Projects", ruby_projects_path %></li>
-              </ul>
-            </li>
-          </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">       <%= link_to "Home", "http://salomanuel.herokuapp.com/" %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Overview", "http://salomanuel.herokuapp.com/portfolio" %></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Apps</li>
+                  <li><a href="http://salomanuel.herokuapp.com/squares"       >Stupid Squares (Javascript)</a></li>
+                  <li><a href="https://manuel-fakebook.herokuapp.com/"        >Fakebook (alpha)</a></li>
+                  <li><a href="https://manuel-sample-app.herokuapp.com/about" >Super Sample App</a></li>
+                  <li><a href="https://fiammettabook.herokuapp.com/"          >Fiammettabook</a></li>
+                  <li><a href="https://salomanuel.herokuapp.com/ruby-projects">Ruby Projects</a></li>                  
+                </ul>
+              </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
               <li></li>
               <li></li>
